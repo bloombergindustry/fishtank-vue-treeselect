@@ -13,6 +13,7 @@ describe('Menu', () => {
       sync: false,
       attachToDocument: true,
       propsData: {
+        alwaysOpen: false,
         options: [],
       },
     })
@@ -129,6 +130,7 @@ describe('Menu', () => {
     const wrapper = mount(Treeselect, {
       sync: false,
       propsData: {
+        alwaysOpen: false,
         options: [],
       },
     })

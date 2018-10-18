@@ -817,6 +817,7 @@ describe('Basic', () => {
   it('an option should be rendered with its id in the markup', () => {
     const wrapper = mount(Treeselect, {
       propsData: {
+        alwaysOpen: false,
         options: [ {
           id: 'a',
           label: 'a',

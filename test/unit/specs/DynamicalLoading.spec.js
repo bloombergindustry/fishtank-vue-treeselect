@@ -147,6 +147,7 @@ describe('Dynamical Loading', () => {
       const spyForLoadOptions = jasmine.createSpy('loadOptions', loadOptions).and.callThrough()
       const wrapper = mount(Treeselect, {
         propsData: {
+          alwaysOpen: false,
           options: [ {
             id: 'a',
             label: 'a',
@@ -574,6 +575,7 @@ describe('Dynamical Loading', () => {
     it('load children options when doing local search', async () => {
       const wrapper = mount(Treeselect, {
         propsData: {
+          alwaysOpen: false,
           options: [ {
             id: 'branch',
             label: 'branch',
@@ -617,6 +619,7 @@ describe('Dynamical Loading', () => {
       const loadOptions = jasmine.createSpy()
       mount(Treeselect, {
         propsData: {
+          alwaysOpen: false,
           options: null,
           loadOptions,
         },
@@ -629,6 +632,7 @@ describe('Dynamical Loading', () => {
       const loadOptions = jasmine.createSpy()
       const wrapper = mount(Treeselect, {
         propsData: {
+          alwaysOpen: false,
           options: null,
           loadOptions,
           autoLoadRootOptions: false,
@@ -674,6 +678,7 @@ describe('Dynamical Loading', () => {
               :options="options"
               :load-options="loadOptions"
               :auto-load-root-options= "false"
+              :alwaysOpen="false"
               />
           </div>
         `,
@@ -742,6 +747,7 @@ describe('Dynamical Loading', () => {
               :options="options"
               :load-options="loadOptions"
               :auto-load-root-options= "false"
+              :alwaysOpen="false"
               />
           </div>
         `,
@@ -940,6 +946,7 @@ describe('Dynamical Loading', () => {
               :options="options"
               :load-options="loadOptions"
               :auto-load-root-options= "false"
+              :alwaysOpen="false"
               />
           </div>
         `,

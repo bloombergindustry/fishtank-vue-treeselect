@@ -250,7 +250,7 @@
 
         return (
           <input ref="input"
-            class="vue-treeselect__input"
+            class="vue-treeselect__input test"
             type="text"
             autocomplete="off"
             tabIndex={instance.tabIndex}

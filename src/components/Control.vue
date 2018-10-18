@@ -1,9 +1,12 @@
 <script>
+  import {
+    CaretSmlDown24 as ArrowIcon,
+  } from '@fishtank/icons-vue'
   import { onLeftClick, isPromise } from '../utils'
   import SingleValue from './SingleValue'
   import MultiValue from './MultiValue'
   import DeleteIcon from './icons/Delete'
-  import ArrowIcon from './icons/Arrow'
+  // import ArrowIcon from './icons/Arrow'
 
   export default {
     name: 'vue-treeselect--control',
@@ -140,14 +143,12 @@
     render() {
       const { instance } = this
       const ValueContainer = instance.single ? SingleValue : MultiValue
-
-      return (
-        <div class="vue-treeselect__control" onMousedown={instance.handleMouseDown}>
-          <ValueContainer ref="value-container" />
-          {this.renderX()}
-          {this.renderArrow()}
-        </div>
-      )
+      const Controls = instance.hideControl === true ? <div class="vue-treeselect__control" style="opacity:0; height:0; display:block"><ValueContainer ref="value-container" /></div> : <div class="vue-treeselect__control" onMousedown={instance.handleMouseDown}>
+            <ValueContainer ref="value-container" />
+            {this.renderX()}
+            {this.renderArrow()}
+          </div>
+      return (Controls)
     },
   }
 </script>

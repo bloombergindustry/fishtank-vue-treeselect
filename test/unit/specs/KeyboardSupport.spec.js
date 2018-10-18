@@ -32,6 +32,7 @@ describe('Keyboard Support', () => {
     keyPressors.forEach(keyPressor => {
       const wrapper = mount(Treeselect, {
         propsData: {
+          alwaysOpen: false,
           options: [],
         },
       })
@@ -172,6 +173,7 @@ describe('Keyboard Support', () => {
       wrapper = mount(Treeselect, {
         sync: false,
         propsData: {
+          alwaysOpen: false,
           options: [ {
             id: 'a',
             label: 'a',
@@ -614,6 +616,7 @@ describe('Keyboard Support', () => {
     [ 'ctrlKey', 'shiftKey', 'metaKey', 'altKey' ].forEach(modifierKey => {
       const wrapper = mount(Treeselect, {
         propsData: {
+          alwaysOpen: false,
           options: [ {
             id: 'a',
             label: 'a',
@@ -632,6 +635,7 @@ describe('Keyboard Support', () => {
   it('any other key press should activate menu', () => {
     const wrapper = mount(Treeselect, {
       propsData: {
+        alwaysOpen: false,
         options: [],
       },
     })

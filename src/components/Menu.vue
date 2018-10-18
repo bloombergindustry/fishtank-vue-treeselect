@@ -18,17 +18,21 @@
     computed: {
       menuStyle() {
         const { instance } = this
-
         return {
-          maxHeight: instance.maxHeight + 'px',
+          maxHeight: instance.maxHeight === null ? null : instance.maxHeight + 'px',
+          position: !instance.dropdownpopover ? 'static' : null,
+          padding: instance.collapseMenuPadding ? '0px' : null,
+          border: instance.collapseMenuPadding ? '0px' : null,
+          // boxShadow: instance.collapseMenuPadding ? 'none' : null,
+          overflow: !instance.dropdownpopover ? 'visible' : null,
         }
       },
 
       menuContainerStyle() {
         const { instance } = this
-
         return {
           zIndex: instance.appendToBody ? null : instance.zIndex,
+          position: !instance.dropdownpopover ? 'static' : null,
         }
       },
     },
