@@ -101,6 +101,7 @@ describe('Methods', () => {
       wrapper = mount(Treeselect, {
         sync: false,
         propsData: {
+          alwaysOpen: false,
           appendToBody,
           options: [],
         },
@@ -151,6 +152,7 @@ describe('Methods', () => {
     beforeEach(() => {
       wrapper = mount(Treeselect, {
         propsData: {
+          alwaysOpen: false,
           options: [],
         },
       })
@@ -174,6 +176,7 @@ describe('Methods', () => {
       const wrapper = mount(Treeselect, {
         sync: false,
         propsData: {
+          alwaysOpen: false,
           options: [],
         },
       })

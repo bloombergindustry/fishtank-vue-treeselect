@@ -990,6 +990,7 @@ describe('Props', () => {
       const wrapper = mount(Treeselect, {
         sync: false,
         propsData: {
+          alwaysOpen: false,
           closeOnSelect: true,
           multiple: false,
           options: [ { id: 'a', label: 'a' } ],
@@ -1172,6 +1173,7 @@ describe('Props', () => {
         propsData: {
           defaultExpandLevel: Infinity,
           flat: false,
+          alwaysOpen: false,
           options: [ {
             id: 'branch',
             label: 'branch',
@@ -1728,6 +1730,7 @@ describe('Props', () => {
         sync: false,
         attachToDocument: true,
         propsData: {
+          alwaysOpen: false,
           options: [],
           openOnClick: false,
         },
@@ -1752,6 +1755,7 @@ describe('Props', () => {
         sync: false,
         attachToDocument: true,
         propsData: {
+          alwaysOpen: false,
           options: [],
           openOnClick: true,
         },
@@ -1774,6 +1778,7 @@ describe('Props', () => {
         sync: false,
         attachToDocument: true,
         propsData: {
+          alwaysOpen: false,
           options: [],
           openOnFocus: false,
         },
@@ -1797,6 +1802,7 @@ describe('Props', () => {
       const wrapper = mount(Treeselect, {
         attachToDocument: true,
         propsData: {
+          alwaysOpen: false,
           options: [],
           openOnFocus: true,
         },
@@ -1817,6 +1823,7 @@ describe('Props', () => {
           sync: false,
           attachToDocument: true,
           propsData: {
+            alwaysOpen: false,
             options: [],
             autoFocus: true,
             openOnFocus: false,
@@ -1833,6 +1840,7 @@ describe('Props', () => {
           sync: false,
           attachToDocument: true,
           propsData: {
+            alwaysOpen: false,
             options: [],
             autoFocus: true,
             openOnFocus: true,
@@ -1850,6 +1858,7 @@ describe('Props', () => {
     it('show tip when `options` is an empty array', () => {
       const wrapper = mount(Treeselect, {
         propsData: {
+          alwaysOpen: false,
           options: [],
         },
       })

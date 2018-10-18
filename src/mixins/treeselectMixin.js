@@ -17,6 +17,8 @@ import {
   ORDER_SELECTED, LEVEL, INDEX,
 } from '../constants'
 
+import fttreeselectMixin from './fttreeselectMixin'
+
 function sortValueByIndex(a, b) {
   let i = 0
   do {
@@ -61,6 +63,7 @@ function getErrorMessage(err) {
 let instanceId = 0
 
 export default {
+  mixins: [ fttreeselectMixin ],
   provide() {
     return {
       // Enable access to the instance of root component of vue-treeselect
@@ -92,7 +95,7 @@ export default {
      */
     alwaysOpen: {
       type: Boolean,
-      default: false,
+      default: true,
     },
 
     /**
@@ -243,7 +246,10 @@ export default {
       type: Boolean,
       default: true,
     },
-
+    collapseMenuPadding: {
+      type: Boolean,
+      default: false,
+    },
     /**
      * How many levels of branch nodes should be automatically expanded when loaded.
      * Set `Infinity` to make all branch nodes expanded by default.
@@ -276,6 +282,16 @@ export default {
     delimiter: {
       type: String,
       default: ',',
+    },
+
+    /**
+     * Only show the nodes that match the search value directly, excluding its ancestors.
+     *
+     * @type {Object}
+     */
+    disableAncestorsOnSearch: {
+      type: Boolean,
+      default: false,
     },
 
     /**
@@ -312,7 +328,10 @@ export default {
       type: Boolean,
       default: false,
     },
-
+    hideControl: {
+      type: Boolean,
+      default: false,
+    },
     /**
      * Deprecated. Use `instanceId` prop instead.
      * @type {string|number}
@@ -396,7 +415,7 @@ export default {
      * Sets `maxHeight` style value of the menu.
      */
     maxHeight: {
-      type: Number,
+      type: [ Number, null ],
       default: 300,
     },
 
@@ -499,6 +518,10 @@ export default {
     placeholder: {
       type: String,
       default: 'Select...',
+    },
+    dropdownpopover: {
+      type: Boolean,
+      default: true,
     },
 
     /**
@@ -1358,7 +1381,7 @@ export default {
       // 1) This option is matched.
       if (node.isMatched) return true
       // 2) This option is not matched, but has matched descendant(s).
-      if (node.isBranch && node.hasMatchedDescendants) return true
+      if (!this.disableAncestorsOnSearch && node.isBranch && node.hasMatchedDescendants) return true
       // 3) This option's parent has no matched descendants,
       //    but after being expanded, all its children should be shown.
       if (!node.isRootNode && node.parentNode.showAllChildrenOnSearch) return true

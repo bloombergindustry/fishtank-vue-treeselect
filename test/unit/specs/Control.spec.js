@@ -8,6 +8,7 @@ describe('Control', () => {
       sync: false,
       attachToDocument: true,
       propsData: {
+        alwaysOpen: false,
         options: [],
       },
     })

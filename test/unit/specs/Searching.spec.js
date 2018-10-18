@@ -10,6 +10,7 @@ describe('Searching', () => {
       const wrapper = mount(Treeselect, {
         propsData: {
           searchable: true,
+          alwaysOpen: false,
           options: [ {
             id: 'a',
             label: 'a',
@@ -76,6 +77,7 @@ describe('Searching', () => {
 
       const wrapper = mount(Treeselect, {
         propsData: {
+          alwaysOpen: false,
           searchable: true,
           options: [ {
             id: 'a',

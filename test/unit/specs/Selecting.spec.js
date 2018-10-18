@@ -46,6 +46,7 @@ describe('Single-select', () => {
     const wrapper = mount(Treeselect, {
       sync: false,
       propsData: {
+        alwaysOpen: false,
         options: [ {
           id: 'a',
           label: 'a',
@@ -75,6 +76,7 @@ describe('Multi-select', () => {
   beforeEach(() => {
     wrapper = mount(Treeselect, {
       propsData: {
+        alwaysOpen: false,
         multiple: true,
         sortValueBy: 'ORDER_SELECTED',
         options: [ {
