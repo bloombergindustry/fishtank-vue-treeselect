@@ -1,3 +1,3 @@
 import Vue, { VueConstructor } from "vue"
 
-export const FishTankTreeselect: VueConstructor<Vue>
+export const FishTankTreeSelect: VueConstructor<Vue>
