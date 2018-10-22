@@ -3,7 +3,7 @@ import treeselectMixin from './mixins/treeselectMixin'
 import './style.less'
 
 export default Treeselect
-export { Treeselect, treeselectMixin }
+export { Treeselect, treeselectMixin, Treeselect as FishTankTreeselect }
 export {
   // Delayed loading.
   LOAD_ROOT_OPTIONS,

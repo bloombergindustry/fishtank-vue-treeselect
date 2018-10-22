@@ -10,8 +10,10 @@
   "css": "dist/vue-treeselect.min.css",
   "files": [
     "src",
-    "dist"
+    "dist",
+    "vue-shim.d.ts"
   ],
+  "types": "./vue-shim.d.ts",
   "scripts": {
     "dev": "node build/dev-server.js",
     "bundle": "rm -rf dist/ && node build/bundle.js",
