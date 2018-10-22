@@ -1,0 +1,1 @@
+cp vue-shim.d.ts dist/

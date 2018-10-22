@@ -10,10 +10,9 @@
   "css": "dist/vue-treeselect.min.css",
   "files": [
     "src",
-    "dist",
-    "vue-shim.d.ts"
+    "dist"
   ],
-  "types": "./vue-shim.d.ts",
+  "types": "dist/vue-shim.d.ts",
   "scripts": {
     "dev": "node build/dev-server.js",
     "bundle": "rm -rf dist/ && node build/bundle.js",
@@ -28,7 +27,7 @@
     "lint": "npm run lint:js && npm run lint:css",
     "size": "size-limit",
     "verify-bundle": "npm run size && node build/verify-bundle.js",
-    "finish": "npm test && npm run bundle && npm run verify-bundle"
+    "finish": "npm test && npm run bundle && npm run verify-bundle && sh cp-defs.sh"
   },
   "pre-commit": "lint",
   "dependencies": {

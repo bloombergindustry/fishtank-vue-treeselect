@@ -1,6 +1,6 @@
 module.exports = [
   {
-    label: 'All U.S. Supreme Court Opinions',
+    label: 'US Supreme Court opinions from 1789 to current.  The Supreme Court of the United States was created by authority of the Judiciary Act of 1789 in accordance with Article III, Section 1 of the United States Constitution. The Court is comprised of a Chief Justice and eight Associate Just',
     showBnaLogo: false,
     folder: false,
     browsable: false,
