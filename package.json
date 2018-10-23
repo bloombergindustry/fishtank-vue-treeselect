@@ -27,7 +27,7 @@
     "lint": "npm run lint:js && npm run lint:css",
     "size": "size-limit",
     "verify-bundle": "npm run size && node build/verify-bundle.js",
-    "finish": "npm test && npm run bundle && npm run verify-bundle && sh cp-defs.sh"
+    "finish": "npm test && npm run bundle && npm run verify-bundle"
   },
   "pre-commit": "lint",
   "dependencies": {
