@@ -1,11 +1,10 @@
 # vue-treeselect
-[![npm](https://badgen.now.sh/npm/v/@riophae/vue-treeselect)](https://www.npmjs.com/package/@riophae/vue-treeselect) [![CircleCI](	https://badgen.now.sh/circleci/github/riophae/vue-treeselect)](https://circleci.com/gh/riophae/vue-treeselect/tree/master) [![Codecov](https://codecov.io/gh/riophae/vue-treeselect/branch/master/graph/badge.svg)](https://codecov.io/gh/riophae/vue-treeselect?branch=master)
-![npm monthly downloads](https://badgen.now.sh/npm/dm/@riophae/vue-treeselect)
-![jsDelivr monthly hits](https://data.jsdelivr.com/v1/package/npm/@riophae/vue-treeselect/badge?style=rounded)
+[![npm](https://badgen.now.sh/npm/v/@riophae/vue-treeselect)](https://www.npmjs.com/package/@fishtank/vue-treeselect) 
 
-> A multi-select component with nested options support for Vue.js
+> A multi-select component with nested options support for Vue.js; 
+> Forked from [Vue-treeselect]([https://github.com/riophae/vue-treeselect)
 
-![Vue-Treeselect Screenshot](https://raw.githubusercontent.com/riophae/vue-treeselect/master/screenshot.png)
+![Vue-Treeselect Screenshot](https://raw.githubusercontent.com/riophae/vue-treeselect/master/screenshot-fishtank-vue-treeselect.png)
 
 ### Features
 
@@ -24,24 +23,31 @@
 It's recommended to install vue-treeselect via npm, and build your app using a bundler like [webpack](https://webpack.js.org/).
 
 ```bash
-npm install --save @riophae/vue-treeselect
+npm install --save @fishtank/vue-treeselect
 ```
 
-This example shows how to integrate vue-treeselect with your [Vue SFCs](https://vuejs.org/v2/guide/single-file-components.html).
+This example shows how to integrate the fishtank vue-treeselect with your [Vue SFCs](https://vuejs.org/v2/guide/single-file-components.html).
 
 ```vue
 <!-- Vue SFC -->
 <template>
   <div id="app">
-    <treeselect v-model="value" :multiple="true" :options="options" />
+    <FishtankTreeSelect
+      :options="options"
+      :max-height="null"
+      :hide-control="true"
+      :dropdownpopover="false"
+      :multiple="true"
+      :collapse-menu-padding="true"
+      v-model="value" />
   </div>
 </template>
 
 <script>
   // import the component
-  import Treeselect from '@riophae/vue-treeselect'
+  import FishtankTreeSelect from '@fishtank/vue-treeselect'
   // import the styles
-  import '@riophae/vue-treeselect/dist/vue-treeselect.css'
+  import '@fishtank/vue-treeselect/dist/vue-treeselect.css'
 
   export default {
     // register the component
@@ -73,61 +79,6 @@ This example shows how to integrate vue-treeselect with your [Vue SFCs](https://
   }
 </script>
 ```
-
-If you just don't want to use webpack or other bundlers, you can also simply include the standalone UMD build in your page. In this way, make sure Vue as a dependency is included before vue-treeselect.
-
-```html
-<html>
-  <head>
-    <!-- include Vue 2.x -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@^2"></script>
-    <!-- include vue-treeselect & its styles. you can change the version tag to better suit your need. -->
-    <script src="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@0.0.37/dist/vue-treeselect.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@0.0.37/dist/vue-treeselect.min.css">
-  </head>
-  <body>
-    <div id="app">
-      <treeselect v-model="value" :multiple="true" :options="options" />
-    </div>
-  </body>
-  <script>
-    // register the component
-    Vue.component('treeselect', VueTreeselect.Treeselect)
-
-    new Vue({
-      el: '#app',
-      data: {
-        // define default value
-        value: null,
-        // define options
-        options: [ {
-          id: 'a',
-          label: 'a',
-          children: [ {
-            id: 'aa',
-            label: 'aa',
-          }, {
-            id: 'ab',
-            label: 'ab',
-          } ],
-        }, {
-          id: 'b',
-          label: 'b',
-        }, {
-          id: 'c',
-          label: 'c',
-        } ],
-      },
-    })
-  </script>
-</html>
-```
-
-### Documentation & Live Demo
-
-[Visit the website](https://vue-treeselect.js.org/)
-
-Note: please use a desktop browser since the website hasn't been optimized for mobile devices.
 
 ### Browser Compatibility
 

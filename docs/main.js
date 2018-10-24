@@ -2,13 +2,15 @@ import 'script-loader!../static/prism.min.js'
 import 'regenerator-runtime/runtime'
 import 'yaku/lib/global'
 import Vue from 'vue'
-import Treeselect from '../src'
+import { Treeselect, FishTankTreeSelect } from '../src'
 
 import './styles/docs.less'
 import './styles/prism.less'
 
 Vue.config.productionTip = false
 Vue.component('treeselect', Treeselect)
+Vue.component('FishTankTreeSelect', FishTankTreeSelect)
+
 
 let sections
 const components = {}

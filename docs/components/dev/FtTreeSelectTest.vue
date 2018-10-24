@@ -1,6 +1,6 @@
 <template>
   <div>
-    <treeselect
+    <FishTankTreeSelect
       :options="options"
       :max-height="null"
       :hide-control="true"
