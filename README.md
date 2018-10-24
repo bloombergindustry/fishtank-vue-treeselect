@@ -4,7 +4,7 @@
 > A multi-select component with nested options support for Vue.js; 
 > Forked from [Vue-treeselect]([https://github.com/riophae/vue-treeselect)
 
-![Vue-Treeselect Screenshot](https://raw.githubusercontent.com/bloombergbna/vue-treeselect/master/screenshot-fishtank-vue-treeselect.png)
+![Vue-Treeselect Screenshot](https://raw.githubusercontent.com/bloombergbna/fishtank-vue-treeselect/master/screenshot-fishtank-vue-treeselect.png)
 
 ### Features
 
