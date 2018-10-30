@@ -1,8 +1,10 @@
 <script>
   import Vue from 'vue'
+  import VueTouch from 'vue-touch'
   import { watchSize, setupResizeAndScrollEventListeners, find } from '../utils'
   import Menu from './Menu'
 
+  Vue.use(VueTouch)
   const PortalTarget = {
     name: 'vue-treeselect--portal-target',
     inject: [ 'instance' ],

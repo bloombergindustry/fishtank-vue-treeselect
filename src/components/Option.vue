@@ -44,12 +44,25 @@
           'vue-treeselect__option--matched': instance.localSearch.active && node.isMatched,
           'vue-treeselect__option--hide': !instance.shouldShowOptionInMenu(node),
         }
-
         if (instance.disableAncestorsOnSearch && instance.localSearch.active && !node.isMatched) {
           return null
         }
-
-        return (
+        if (instance.isMobile) {
+          return (
+          <v-touch onTap={this.handleMouseEnterOption}>
+            <div class={optionClass} data-id={node.id}>
+              {this.renderArrow()}
+              {this.renderLabelContainer([
+                this.renderCheckboxContainer([
+                  this.renderCheckbox(),
+                ]),
+                this.renderLabel(),
+              ])}
+            </div>
+          </v-touch>
+        )
+        } else {
+          return (
           <div class={optionClass} onMouseenter={this.handleMouseEnterOption} data-id={node.id}>
             {this.renderArrow()}
             {this.renderLabelContainer([
@@ -60,6 +73,7 @@
             ])}
           </div>
         )
+        }
       },
 
       renderSubOptionsList() {
@@ -89,14 +103,30 @@
             'vue-treeselect__option-arrow': true,
             'vue-treeselect__option-arrow--rotated': this.shouldExpand,
           }
-
-          return (
+          // const checkTap = function () {
+          //   /*eslint-disable*/
+          //   alert('tap')
+          //   /*eslint-enable*/
+          // }
+          if (instance.isMobile) {
+            return (
+              <v-touch class="vue-treeselect__option-arrow-container" onTap={this.mobilehandleMouseDownOnArrow}>
+                <div >
+                  <transition {...transitionProps}>
+                    <ArrowIcon class={arrowClass} />
+                  </transition>
+                </div>
+              </v-touch>
+            )
+          } else {
+            return (
             <div class="vue-treeselect__option-arrow-container" onMousedown={this.handleMouseDownOnArrow}>
               <transition {...transitionProps}>
                 <ArrowIcon class={arrowClass} />
               </transition>
             </div>
           )
+          }
         }
 
         // For leaf nodes, we render a placeholder to keep its label aligned to
@@ -311,6 +341,11 @@
 
         instance.toggleExpanded(node)
       }),
+
+      mobilehandleMouseDownOnArrow() {
+        const { instance, node } = this
+        instance.toggleExpanded(node)
+      },
 
       handleMouseDownOnLabelContainer: onLeftClick(function handleMouseDownOnLabelContainer() {
         const { instance, node } = this
