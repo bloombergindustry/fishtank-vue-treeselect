@@ -353,6 +353,11 @@ export default {
     /**
      * Joins multiple values into a single form field with the `delimiter` (legacy mode).
     */
+    isMobile: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     joinValues: {
       type: Boolean,
       default: false,
