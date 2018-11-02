@@ -38,7 +38,6 @@
         }
       },
     },
-
     watch: {
       'instance.trigger.searchQuery'(newValue) {
         this.value = newValue
@@ -48,6 +47,9 @@
         // istanbul ignore else
         if (this.needAutoSize) this.$nextTick(this.updateInputWidth)
       },
+    },
+    mounted() {
+      this.$refs.input.focus()
     },
 
     created() {
@@ -250,7 +252,7 @@
 
         return (
           <input ref="input"
-            class="vue-treeselect__input test"
+            class="vue-treeselect__input"
             type="text"
             autocomplete="off"
             tabIndex={instance.tabIndex}

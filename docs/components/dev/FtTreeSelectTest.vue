@@ -11,6 +11,7 @@
       :value-consists-of="valueConsistsOf"
       :disable-fuzzy-matching="true"
       :sort-value-by="sortValueBy"
+      :flat="flatOption"
       v-model="value" />
   </div>
 </template>
@@ -27,7 +28,8 @@
         value: [ ],
         options: bgovCommittee,
         sortValueBy: 'INDEX',
-        valueConsistsOf: 'ALL',
+        valueConsistsOf: 'ALL_WITH_INDETERMINATE',
+        flatOption: true,
       }
     },
     methods: {
