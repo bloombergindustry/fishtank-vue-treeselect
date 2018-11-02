@@ -351,9 +351,9 @@
   .row();
 
   height: @treeselect-control-height;
-  border: @treeselect-control-border-width solid @treeselect-control-border-color;
-  border-radius: @treeselect-control-border-radius;
-  background: @treeselect-control-bg;
+  // border: @treeselect-control-border-width solid @treeselect-control-border-color;
+  // border-radius: @treeselect-control-border-radius;
+  // background: @treeselect-control-bg;
   transition-duration: @treeselect-transition-duration;
   transition-property: border-color, box-shadow, width, height, background-color, opacity;
   transition-timing-function: @ease-out-cubic;
@@ -381,6 +381,9 @@
 
   .vue-treeselect--open.vue-treeselect--open-above & {
     .border-radius-top(0);
+  }
+  &.fishtank {
+    box-shadow: 0 0 0 2px @color-selected;
   }
 }
 
@@ -709,6 +712,9 @@
     margin-top: (-@treeselect-control-border-width);
     // border-top-color: @t   reeselect-control-menu-divider-color;
     // box-shadow: @treeselect-menu-box-shadow;
+    &.fishtank {
+      margin-top: 12px;
+    }
   }
 
   .vue-treeselect--open-above & {

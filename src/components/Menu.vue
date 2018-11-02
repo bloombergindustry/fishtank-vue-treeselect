@@ -70,7 +70,7 @@
         if (!instance.menu.isOpen) return null
 
         return (
-          <div ref="menu" class="vue-treeselect__menu" onMousedown={instance.handleMouseDown} style={this.menuStyle}>
+          <div ref="menu" class={instance.hideControls ? 'vue-treeselect__menu' : 'vue-treeselect__menu fishtank'} onMousedown={instance.handleMouseDown} style={this.menuStyle}>
             {instance.async
               ? this.renderAsyncSearchMenuInner()
               : instance.localSearch.active
