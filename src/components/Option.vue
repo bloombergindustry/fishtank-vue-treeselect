@@ -158,11 +158,22 @@
       },
 
       renderLabelContainer(children) {
-        return (
+        const { instance } = this
+        if (instance.isMobile) {
+          return (
+            <v-touch class="vue-treeselect__label-container" onTap={this.handleMouseDownOnLabelContainer}>
+              <div>
+                {children}
+              </div>
+            </v-touch>
+          )
+        } else {
+          return (
           <div class="vue-treeselect__label-container" onMousedown={this.handleMouseDownOnLabelContainer}>
             {children}
           </div>
         )
+        }
       },
 
       renderCheckboxContainer(children) {

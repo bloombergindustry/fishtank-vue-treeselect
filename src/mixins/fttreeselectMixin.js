@@ -6,6 +6,10 @@ export default {
           type: [ Number, null ],
           default: 300,
         },
+        focusOnLoad: {
+          type: Boolean,
+          default: false,
+        },
       },
     }
   },

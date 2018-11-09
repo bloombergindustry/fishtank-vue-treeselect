@@ -49,7 +49,8 @@
       },
     },
     mounted() {
-      this.$refs.input.focus()
+      const { instance } = this
+      if (instance.focusOnLoad) this.$refs.input.focus()
     },
 
     created() {
