@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.6"></a>
+## [0.2.6](https://github.com/bloombergbna/fishtank-vue-treeselect/compare/v0.2.5...v0.2.6) (2018-11-09)
+
+
+### Bug Fixes
+
+* testing updated onTap function ([8c0ca37](https://github.com/bloombergbna/fishtank-vue-treeselect/commit/8c0ca37))
+
+
+
 <a name="0.2.5"></a>
 ## [0.2.5](https://github.com/bloombergbna/fishtank-vue-treeselect/compare/v0.2.4...v0.2.5) (2018-11-09)
 
