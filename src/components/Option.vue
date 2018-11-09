@@ -63,8 +63,7 @@
         }
         if (instance.isMobile) {
           return (
-          <v-touch onTap={this.handleMouseEnterOption}>
-            <div class={optionClass} data-id={node.id}>
+            <v-touch class={optionClass} data-id={node.id} onTap={this.handleMouseEnterOption}>
               {this.renderArrow()}
               {this.renderLabelContainer([
                 this.renderCheckboxContainer([
@@ -72,9 +71,8 @@
                 ]),
                 this.renderLabel(),
               ])}
-            </div>
-          </v-touch>
-        )
+            </v-touch>
+          )
         } else {
           return (
           <div class={optionClass} onMouseenter={this.handleMouseEnterOption} data-id={node.id}>
@@ -158,22 +156,11 @@
       },
 
       renderLabelContainer(children) {
-        const { instance } = this
-        if (instance.isMobile) {
-          return (
-            <v-touch class="vue-treeselect__label-container" onTap={this.handleMouseDownOnLabelContainer}>
-              <div>
-                {children}
-              </div>
-            </v-touch>
-          )
-        } else {
-          return (
+        return (
           <div class="vue-treeselect__label-container" onMousedown={this.handleMouseDownOnLabelContainer}>
             {children}
           </div>
-        )
-        }
+          )
       },
 
       renderCheckboxContainer(children) {
