@@ -159,7 +159,7 @@
         const { instance } = this
         if (instance.isMobile) {
           return (
-            <v-touch class="vue-treeselect__label-container" onMousedown={this.handleMouseDownOnLabelContainer}>
+            <v-touch class="vue-treeselect__label-container" onTap={this.handleMouseDownOnLabelContainer}>
               {children}
             </v-touch>
           )
