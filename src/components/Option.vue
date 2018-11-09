@@ -156,11 +156,20 @@
       },
 
       renderLabelContainer(children) {
-        return (
-          <div class="vue-treeselect__label-container" onMousedown={this.handleMouseDownOnLabelContainer}>
-            {children}
-          </div>
+        const { instance } = this
+        if (instance.isMobile) {
+          return (
+            <v-touch class="vue-treeselect__label-container" onMousedown={this.handleMouseDownOnLabelContainer}>
+              {children}
+            </v-touch>
           )
+        } else {
+          return (
+            <div class="vue-treeselect__label-container" onMousedown={this.handleMouseDownOnLabelContainer}>
+              {children}
+            </div>
+            )
+        }
       },
 
       renderCheckboxContainer(children) {
