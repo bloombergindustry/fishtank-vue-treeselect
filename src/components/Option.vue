@@ -156,11 +156,20 @@
       },
 
       renderLabelContainer(children) {
-        return (
+        const { instance } = this
+        if (instance.isMobile) {
+          return (
+          <v-touch class="vue-treeselect__label-container" onTap={this.mobileHandleMouseDownOnLabelContainer}>
+            {children}
+          </v-touch>
+        )
+        } else {
+          return (
           <div class="vue-treeselect__label-container" onMousedown={this.handleMouseDownOnLabelContainer}>
             {children}
           </div>
         )
+        }
       },
 
       renderCheckboxContainer(children) {
@@ -295,7 +304,7 @@
         }
 
         return (
-          <span class={checkboxClass}>
+          <span class={checkboxClass} onMousedown={this.handleMouseDownOnLabelContainer}>
             {checkMark}
           </span>
         )
@@ -411,6 +420,16 @@
           instance.select(node)
         }
       }),
+
+      mobileHandleMouseDownOnLabelContainer() {
+        const { instance, node } = this
+
+        if (node.isBranch && instance.disableBranchNodes) {
+          instance.toggleExpanded(node)
+        } else {
+          instance.select(node)
+        }
+      },
 
       handleMouseDownOnRetry: onLeftClick(function handleMouseDownOnRetry() {
         const { instance, node } = this
