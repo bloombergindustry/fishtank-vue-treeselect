@@ -331,6 +331,7 @@ export default {
     hideControl: {
       type: Boolean,
       default: false,
+      description: 'Set `true` to hide the "control" text input field.',
     },
     /**
      * Deprecated. Use `instanceId` prop instead.
@@ -353,16 +354,16 @@ export default {
     /**
      * Joins multiple values into a single form field with the `delimiter` (legacy mode).
     */
-    isMobile: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
     joinValues: {
       type: Boolean,
       default: false,
     },
-
+    isMobile: {
+      type: Boolean,
+      required: false,
+      default: false,
+      description: `Set to "true" to use hammerJs to detect touch events in iOS Cordova Webview`,
+    },
     /**
      * Limit the display of selected options.
      * The rest will be hidden within the limitText string.
@@ -422,6 +423,7 @@ export default {
     maxHeight: {
       type: [ Number, null ],
       default: 300,
+      description: 'Sets `maxHeight` style value of the menu.',
     },
 
     /**
@@ -430,6 +432,7 @@ export default {
     multiple: {
       type: Boolean,
       default: false,
+      description: 'Set `true` to allow selecting multiple options (a.k.a., multi-select mode).',
     },
 
     /**
@@ -527,6 +530,7 @@ export default {
     dropdownpopover: {
       type: Boolean,
       default: true,
+      description: 'Set `false` to display the display the menu content',
     },
 
     /**
