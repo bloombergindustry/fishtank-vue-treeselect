@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.0-0"></a>
+# [0.3.0-0](https://github.com/bloombergbna/fishtank-vue-treeselect/compare/v0.2.6...v0.3.0-0) (2019-01-24)
+
+
+### Features
+
+* added documentation for props ([d248f08](https://github.com/bloombergbna/fishtank-vue-treeselect/commit/d248f08))
+
+
+
 <a name="0.2.6"></a>
 ## [0.2.6](https://github.com/bloombergbna/fishtank-vue-treeselect/compare/v0.2.5...v0.2.6) (2018-11-09)
 
