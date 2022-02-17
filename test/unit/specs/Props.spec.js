@@ -1,13 +1,6 @@
 import Vue from 'vue'
 import { mount } from '@vue/test-utils'
 import sleep from 'yaku/lib/sleep'
-import Treeselect from '@src/components/Treeselect'
-import Option from '@src/components/Option'
-import MultiValueItem from '@src/components/MultiValueItem'
-import {
-  UNCHECKED, CHECKED, INDETERMINATE,
-  ALL, BRANCH_PRIORITY, LEAF_PRIORITY, ALL_WITH_INDETERMINATE,
-} from '@src/constants'
 import {
   $,
   generateOptions,
@@ -19,6 +12,13 @@ import {
   findOptionByNodeId,
   findLabelContainerByNodeId,
 } from './shared'
+import Treeselect from '@src/components/Treeselect'
+import Option from '@src/components/Option'
+import MultiValueItem from '@src/components/MultiValueItem'
+import {
+  UNCHECKED, CHECKED, INDETERMINATE,
+  ALL, BRANCH_PRIORITY, LEAF_PRIORITY, ALL_WITH_INDETERMINATE,
+} from '@src/constants'
 
 describe('Props', () => {
   describe('allowClearingDisabled', () => {

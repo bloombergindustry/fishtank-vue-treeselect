@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
-import Treeselect from '@src/components/Treeselect'
 import { typeSearchText } from './shared'
+import Treeselect from '@src/components/Treeselect'
 
 describe('Methods', () => {
   describe('toggleExpanded()', () => {
