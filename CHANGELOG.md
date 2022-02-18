@@ -1,6 +1,10 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.3.1](https://github.com/bloombergindustry/fishtank-vue-treeselect/compare/v0.3.0...v0.3.1) (2022-02-18)
+
+## [0.3.0](https://github.com/bloombergindustry/fishtank-vue-treeselect/compare/v0.3.0-0...v0.3.0) (2022-02-18)
 
 <a name="0.3.0-0"></a>
 # [0.3.0-0](https://github.com/bloombergbna/fishtank-vue-treeselect/compare/v0.2.6...v0.3.0-0) (2019-01-24)
