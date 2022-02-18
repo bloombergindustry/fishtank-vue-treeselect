@@ -63,7 +63,7 @@
         }
         if (instance.isMobile) {
           return (
-            <v-touch class={optionClass} data-id={node.id} onTap={this.handleMouseEnterOption}>
+            <div class={optionClass} data-id={node.id} onTouchstart={this.handleMouseEnterOption}>
               {this.renderArrow()}
               {this.renderLabelContainer([
                 this.renderCheckboxContainer([
@@ -71,7 +71,7 @@
                 ]),
                 this.renderLabel(),
               ])}
-            </v-touch>
+            </div>
           )
         } else {
           return (
@@ -122,13 +122,13 @@
           // }
           if (instance.isMobile) {
             return (
-              <v-touch class="vue-treeselect__option-arrow-container" onTap={this.mobilehandleMouseDownOnArrow}>
+              <div class="vue-treeselect__option-arrow-container" onTouchstart={this.mobilehandleMouseDownOnArrow}>
                 <div >
                   <transition {...transitionProps}>
                     <ArrowIcon class={arrowClass} />
                   </transition>
                 </div>
-              </v-touch>
+              </div>
             )
           } else {
             return (
@@ -159,9 +159,9 @@
         const { instance } = this
         if (instance.isMobile) {
           return (
-          <v-touch class="vue-treeselect__label-container" onTap={this.mobileHandleMouseDownOnLabelContainer}>
+          <div class="vue-treeselect__label-container" onTouchstart={this.mobileHandleMouseDownOnLabelContainer}>
             {children}
-          </v-touch>
+          </div>
         )
         } else {
           return (
@@ -303,11 +303,19 @@
           // )
         }
 
-        return (
-          <span class={checkboxClass} onMousedown={this.handleMouseDownOnLabelContainer}>
-            {checkMark}
-          </span>
-        )
+        if (instance.isMobile) {
+          return (
+            <span class={checkboxClass} onTouchstart={this.handleMouseDownOnLabelContainer}>
+              {checkMark}
+            </span>
+          )
+        } else {
+          return (
+            <span class={checkboxClass} onMousedown={this.handleMouseDownOnLabelContainer}>
+              {checkMark}
+            </span>
+          )
+        }
       },
 
       renderLabel() {

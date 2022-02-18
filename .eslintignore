@@ -1,6 +1,7 @@
 dist
 static
 test/unit/coverage
+gh-pages
 
 # temp
 test/e2e

@@ -362,7 +362,7 @@ export default {
       type: Boolean,
       required: false,
       default: false,
-      description: `Set to "true" to use hammerJs to detect touch events in iOS Cordova Webview`,
+      description: `Set to "true" to use touch start events in iOS Cordova Webview`,
     },
     /**
      * Limit the display of selected options.
