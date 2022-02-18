@@ -2,14 +2,14 @@
   "name": "@fishtank/vue-treeselect",
   "version": "0.3.0-0",
   "description": "A multi-select component with nested options support for Vue.js; Forked from riophae/vue-treeselect",
-  "author": "Riophae Lee <riophaelee@gmail.com>",
+  "author": "Bloomberg Industry",
   "license": "Apache-2.0",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bloombergbna/fishtank-vue-treeselect.git"
+    "url": "https://github.com/bloombergindustry/fishtank-vue-treeselect"
   },
   "main": "dist/vue-treeselect.js",
   "unpkg": "dist/vue-treeselect.min.js",
@@ -43,11 +43,8 @@
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "easings-css": "^1.0.0",
     "fuzzysearch": "^1.0.3",
-    "google-material-color": "^1.3.1",
     "is-promise": "^2.1.0",
-    "lodash": "^4.0.0",
-    "standard-version": "4.4.0",
-    "vue-touch": "2.0.0-beta.4",
+    "lodash": "4.17.21",
     "watch-size": "^2.0.0"
   },
   "devDependencies": {
@@ -112,6 +109,7 @@
     "shallow-equal": "^1.0.0",
     "shelljs": "^0.8.1",
     "size-limit": "^0.19.0",
+    "standard-version": "9.3.2",
     "strip-indent": "^2.0.0",
     "stylelint": "^9.1.2",
     "stylelint-config-xo-space": "^0.9.0",
